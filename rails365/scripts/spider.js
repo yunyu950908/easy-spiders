@@ -33,7 +33,8 @@ async function getPlaylistInfinite() {
   }
 }
 
-switch (process.argv[2]) {
+// process.env.PROCESS_ARGV_2 兼容 pm2 启动
+switch (process.argv[2] || process.env.PROCESS_ARGV_2) {
   case 'get_single_playlist':
     Spider.getSinglePlaylist(process.argv[3])
       .then((r) => {
