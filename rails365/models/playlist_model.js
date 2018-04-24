@@ -12,16 +12,16 @@ const PlaylistSchema = new Schema({
   videoCount: { type: Number, required: true, default: 0 }, // playlist length
   playlist: [
     {
-      sortNum: { type: Number, required: true, unique: true },
+      sortNum: { type: Number, required: true },
       title: { type: String, required: true }, // video title
       coverImg: { type: String },
       detailUrl: { type: String, required: true, unique: true }, // video page url
       isFree: { type: Boolean, required: true },
       viewsCount: { type: Number, required: true },
       updateTime: { type: String, required: true },
-      realVideo: { type: String, unique: true },
-      guessVideo: { type: String, unique: true }, // video url 收费视频需要转义拼接猜出来 部分可用
-      guessDecode: { type: String, unique: true },
+      realVideo: { type: String },
+      guessVideo: { type: String }, // video url 收费视频需要转义拼接猜出来 部分可用
+      guessDecode: { type: String },
       article: { type: String },
     },
   ],

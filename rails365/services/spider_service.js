@@ -134,7 +134,8 @@ async function spideringPlaylists(arr) {
       .then(() => {
         result.success++;
       })
-      .catch(() => {
+      .catch((e) => {
+        console.log(e);
         result.failed++;
       });
   }
