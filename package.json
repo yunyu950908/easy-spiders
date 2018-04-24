@@ -1,0 +1,27 @@
+{
+  "name": "easy-spiders",
+  "version": "1.0.0",
+  "description": "爬着玩儿的，欢迎交流。",
+  "main": "index.js",
+  "scripts": {
+    "rails365": "DEBUG=leancloud* node ./rails365/spider.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yunyu950908/easy-spiders.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yunyu950908/easy-spiders/issues"
+  },
+  "homepage": "https://github.com/yunyu950908/easy-spiders#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
+    "leancloud-storage": "^3.6.7",
+    "moment": "^2.22.1"
+  }
+}
