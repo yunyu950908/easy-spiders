@@ -12,13 +12,16 @@ const PlaylistSchema = new Schema({
   videoCount: { type: Number, required: true, default: 0 }, // playlist length
   playlist: [
     {
+      sortNum: { type: Number, required: true, unique: true },
       title: { type: String, required: true }, // video title
       coverImg: { type: String },
       detailUrl: { type: String, required: true, unique: true }, // video page url
       isFree: { type: Boolean, required: true },
       viewsCount: { type: Number, required: true },
       updateTime: { type: String, required: true },
-      videoUrl: { type: String, required: true, unique: true, default: '' }, // video url 收费视频需要转义拼接
+      realVideo: { type: String, unique: true },
+      guessVideo: { type: String, unique: true }, // video url 收费视频需要转义拼接猜出来 部分可用
+      guessDecode: { type: String, unique: true },
       article: { type: String },
     },
   ],
@@ -29,17 +32,6 @@ const PlaylistSchema = new Schema({
 
 const PlaylistModel = mongoose.model('rails365', PlaylistSchema);
 
-async function insert(obj) {
-  const result = await PlaylistModel.create(obj);
-  return result;
-}
-
-async function findOneByUrl(listUrl) {
-  const result = await PlaylistModel.findOne({ listUrl });
-  return result;
-}
-
 module.exports = {
-  insert,
-  findOneByUrl,
+  model: PlaylistModel,
 };

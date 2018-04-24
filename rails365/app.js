@@ -1,5 +1,5 @@
 require('./services/mongoose_service');
-require('./spider');
+require('./scripts/spider');
 
 process.on('uncaughtException', (err) => {
   console.log(err);
