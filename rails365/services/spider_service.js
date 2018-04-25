@@ -83,7 +83,8 @@ async function getVideo(url) {
   const reg = /https:\/\/screen-videos.+\.mp4/;
   const urlMatch = videoPage.match(reg);
   result.realVideo = urlMatch && urlMatch[0] || '';
-  result.article = $('.panel-body').find('hr').next().text() || '';
+  result.realDecode = result.realVideo ? decodeURI(result.realVideo) : '',
+    result.article = $('.panel-body').find('hr').next().text() || '';
   return result;
 }
 

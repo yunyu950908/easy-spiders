@@ -20,6 +20,7 @@ const PlaylistSchema = new Schema({
       viewsCount: { type: Number, required: true },
       updateTime: { type: String, required: true },
       realVideo: { type: String },
+      realDecode: { type: String },
       guessVideo: { type: String }, // video url 收费视频需要转义拼接猜出来 部分可用
       guessDecode: { type: String },
       article: { type: String },

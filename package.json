@@ -20,6 +20,7 @@
   "homepage": "https://github.com/yunyu950908/easy-spiders#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "bluebird": "^3.5.1",
     "cheerio": "^1.0.0-rc.2",
     "leancloud-storage": "^3.6.7",
     "moment": "^2.22.1",
